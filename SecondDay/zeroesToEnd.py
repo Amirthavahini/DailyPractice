@@ -7,12 +7,11 @@ use extra space for another array.
 
 class Solution:
     def pushZerosToEnd(self,arr):
-        count=0
-        empty=[]
-        for i in arr:
-            if i!=0:
-                empty.append(i)
-            else:
-                count+=1
-        empty.extend([0]*count)
-        return empty
+        pos = 0
+        for i in range(len(arr)):
+            if arr[i]!=0:
+                arr[pos]=arr[i]
+                pos+=1
+        while pos < len(arr):
+            arr[pos] = 0
+            pos += 1
